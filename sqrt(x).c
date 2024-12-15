@@ -1,20 +1,22 @@
-int mySqrt(int x) {
-    if(x==0 || x==1)
-    return 0;
-    int l=1,r=x,result=0;
-    while(l<=r)
-    {
-        long long m;
-        m=l+(r-l);
-        if(m*m<=x)
+int mySqrt(int x)
+{
+  long  int i,p=1,C;
+    if(x==1)return 1;
+     else if(x==2|| x==3)
         {
-            result=m;
-            l=m+1;
+            return 1;
         }
-        else
+    for(i=1;i<=x;i++)
+    {
+        p=i*i;
+        if(p==x)
         {
-            r=m-1;
+            return i;
+        }
+        else if(p>x)
+        {
+            return --i;
         }
     }
-    return result;
+    return 0;
 }
